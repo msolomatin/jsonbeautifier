@@ -1,0 +1,24 @@
+<html>
+<head><title>my json beautifier</title>
+<style type="text/css">
+    textarea {font-size:16px;font-family:"Consolas";}
+</style>
+ <script type="text/javascript">
+function Convert() {    
+    //document.body.removeChild(document.getElementById('pre'));
+    var div = document.getElementById("result");
+    var my_text = JSON.parse(document.getElementById("unformatted_json").value);
+    var str = JSON.stringify(my_text, undefined, 2);
+    document.body.appendChild(document.createElement('pre')).innerHTML = str;
+}
+</script>
+</head>
+<body>
+<b>alpha version of json beautifier</b><p>
+<textarea id="unformatted_json" rows="20" cols="80" style="border:solid 1px grey"></textarea>
+ <button type="button" onclick="Convert()">Beautify</button>
+ <div id="result">
+ 
+</div>
+</body>
+</html>
